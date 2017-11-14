@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FamilyFridays</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<ul class="menu-item">
+	<li>
+		<%= link_to 'Users', users_path %>
+	</li>
+	<li>
+		<%= link_to 'Groups', group_assignments_path %>
+	</li>
+	<li>
+		<%= link_to 'Home', root_path %>
+	</li>
+</ul>
+
+<%= yield %>
+
+</body>
+</html>

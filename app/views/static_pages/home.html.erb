@@ -1,0 +1,27 @@
+<div class="home">
+	<h1>
+		Welcome to Family Fridays
+	</h1>
+	<div id="page">
+	  <% if flash[:alert] %>
+	    <p class="flash-error">Error:<%= flash[:error] %></p>
+	  <% end %>
+	  <% if flash[:notice] %>
+	    <p class="flash-notice">Warning:<%= flash[:notice] %></p>
+	  <% end %>
+	  <%= yield %>
+	</div>
+	<div>
+		<div>Step 1: Tell us who is joining by adding them to the users list.</div>
+		<div><%= link_to 'Users', users_path %></div>
+	</div>
+	<div>
+		<div>Step 2: Generate your Friday lunch group by clicking the button below.</div>
+		<div><%= button_to "Generate Groups", generate_groups_path %></div>
+	</div>
+	<div>
+		<div>Step 3: Visit the groups page any time, to see what the assignments were. </div>
+		<div><%= link_to 'Groups', group_assignments_path %></div>
+	</div>
+</div>
+

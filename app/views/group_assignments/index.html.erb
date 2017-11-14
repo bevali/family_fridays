@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lunch Group Assignments</h1>
+
+    <% if @group_assignments.count == 0 %>
+      <div>
+        No groups
+      </div>
+    <% else %>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @group_assignments.each do |group_assignment| %>
+      <tr>
+        <td><%= group_assignment.user.first_name %> <%= group_assignment.user.last_name %></td>
+        <td><%= group_assignment.group %></td>
+        <td><%= link_to 'Show', group_assignment %></td>
+        <td><%= link_to 'Edit', edit_group_assignment_path(group_assignment) %></td>
+        <td><%= link_to 'Destroy', group_assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+    <% end %>
+<br>
+
+<%= button_to "Generate New Groups", generate_groups_path %>
